@@ -1,12 +1,17 @@
 // purpose of this file is to test solely the component app 
 // in this case, the only thing I care about is making sure that app shows React simple starter
 
-import { renderComponent, expect }  from '.../test_helper';
+import { renderComponent, expect }  from '../test_helper';
 import App from '../../src/components/app';
 
 // use describe to group together similar tests 
 describe('App', () => {
-	it('shows the correct text')
+	it('shows the correct text', () => {
+		//create an instance of App 
+
+		const component = renderComponent(App); 
+		expect(component).to.contain('React simple starter');
+	})
 })
 
 // Use 'it' to test a single attribute of a target 
@@ -14,4 +19,5 @@ describe('App', () => {
 
 
 //use expect to make an assertion about a target 
-expect()
+
+// the purpose of writing all of these functions is that so we can safely throw errors that mocha can understand and provide us with feedback rather than throwing the whole browser out of whack
