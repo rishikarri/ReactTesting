@@ -38,7 +38,7 @@ describe('CommentBox', () => {
 
 		it ('when submitted, clears the input', () => {
 			//need to trigger behavior that causes comment box to clear out the input 
-			component.simulate('submit');
+			component.simulate('submit'); //simulating the submit on teh top level element
 			expect(component.find('textarea')).to.have.value('');
 		});	
 	})

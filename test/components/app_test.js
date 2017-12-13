@@ -21,6 +21,10 @@ describe('App', () => {
 		// find is a jquery method that expects a css selector
 		expect(component.find('.comment-box')).to.exist;
 	})
+
+	it ('shows a comment list', () => {
+		expect(component.find('.comment-list')).to.exist;
+	})
 })
 
 // Use 'it' to test a single attribute of a target 
