@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions/';
 
-export default class CommentBox extends Component {
+// we just imported everything and saved them as the variable actions now we can pass the entire actions objects
+
+class CommentBox extends Component {
 	constructor (props) {
 		super(props); 
 
@@ -15,6 +19,7 @@ export default class CommentBox extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
+		this.props.saveComment(this.state.comment);
 		this.setState({
 			comment: '',
 		})
@@ -28,3 +33,6 @@ export default class CommentBox extends Component {
 		)
 	}
 }
+
+// all we care about is the action creators here
+export default connect(null, actions)(CommentBox);
